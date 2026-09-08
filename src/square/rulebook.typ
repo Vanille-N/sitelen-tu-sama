@@ -27,7 +27,7 @@
 
 #let decrease = 8.5mm
 #let true-free-space = specs.side - 2 * specs.inner-padding - decrease
-#let side(border: white, edge: (:), background: white, linebreaks: (), ..pages) = {
+#let side(border: white, edge: (:), linebreaks: (), ..pages) = {
   let len = pages.len()
   for (idx, pg) in pages.pos().enumerate() {
     let border = if type(border) == color { border } else { border.at(idx) }
@@ -229,38 +229,10 @@
 
 #import "/meta/nimi.typ"
 
-#let need-clarification = (
-  wa: "wa",
-  unu: "unu",
-  nja: "nja",
-  oke: "oke1",
-  kin: "kin",
-  meso: "meso",
-  kiki: "kiki1",
-  soko: "soko",
-  leko: "leko",
-  teje: "teje",
-  tonsi: "tonsi",
-  monsi: "monsi2",
-  apeja: "apeja",
-  epiku: "epiku",
-  konwe: "konwe",
-  usawi: "usawi",
-  jasima: "jasima",
-  lanpan: "lanpan",
-  namako: "namako2",
-  majuna: "majuna2",
-  kipisi: "kipisi",
-  nimisin: "nimisin",
-  linluwi: "linluwi1",
-  wekama: "wekama",
-  monsuta: "monsuta",
-  misikeke: "misikeke",
-  kokosila: "kokosila",
-)
+#let need-clarification = nimi.nimi.pairs().filter(((k,v),) => "nasa" in v and "weka" not in v).map(((k,v),) => k)
 
 #let obscure-sorted() = {
-  let words = need-clarification.keys().sorted(key: s => measure(unsp[#s]).width)
+  let words = need-clarification.sorted(key: s => measure(unsp[#s]).width)
   let (short, mid, long) = {
     let n = words.len()
     let cut1 = int(calc.ceil(n / 3))
@@ -304,7 +276,7 @@
     #box[
       #table(columns: (1.7cm,2.1cm,2.4cm), inset: (y: 3.4pt), stroke: cc("a-"), align: center, ..{
         for n in obscure-sorted() {
-          let s = need-clarification.at(n)
+          let s = nimi.chosen-variant(n)
           ([#sp(12pt, cc("k-"))[#s] #h(1fr) #unsp(11pt, cc("k-"))[#n]],)
         }
       })
@@ -332,9 +304,7 @@
 #let recto() = {
   side(
     border: palette.light.white,
-    background: palette.light.white,
     edge: (cut: false, margin: false),
-    linebreaks: (),
 
     introduction,
     contents,
@@ -348,8 +318,6 @@
   side(
     border: (palette.light.gray, palette.light.white, palette.light.white, palette.light.gray),
     edge: (cut: true, margin: false),
-    background: palette.light.white,
-    linebreaks: (),
 
     back-side(num),
     obscure-1,

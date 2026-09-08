@@ -79,9 +79,9 @@
         . ona2 li kepeken e ilo sitelen #quot("b")[#unsp[Typst]]
         #h(1fr) kepeken:; #unsp(..addr)[typst.app] \
         . lipu ale li lon poki lipu #quot[#unsp(cc("g+"))[Git]#unsp(cc("g-"))[Hub]]
-        #h(1fr) lipu:; #unsp(..addr)[github:Vanille-N/sitelen-tu-sama] \
+        #h(1fr) lipu:; #unsp(..addr)[github:vanille-n/sitelen-tu-sama] \
         .. sina2 ken jasima en ante en pana en kepeken e lipu ale,
-        taso sina2 o esun ala e ona2 \
+        taso sina2 o esun mani ala e ona2 en ijo pi(kepeken ona) \
       ]]
       #div(1%)
       #body[#sp(9pt)[
@@ -98,7 +98,7 @@
         #h(1fr) sitelen:; #unsp(..addr)[github:kreativekorp/sitelen-seli-kiwen] \
         . ni3 la, jan #sp(cc("g"))[[Newen]] li ante lili e sitelen #quot("a")[mije] en #quot("a")[tomo2] en #quot("a")[mani] \
         .. sina2 ken jasima en ante en pana en kepeken e nasin sitelen,
-        taso sina2 o esun ala e ona2 wan taso
+        taso sina2 o esun mani ala e ona2 wan taso
       ]]
       #div(1%)
       #body[#sp(9pt)[

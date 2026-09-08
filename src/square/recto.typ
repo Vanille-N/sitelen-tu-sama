@@ -129,32 +129,34 @@
 #set page(numbering: "a")
 
 #let distributions = (:)
-#for (i,c) in cards.slice(0).enumerate() {
-  let dnum = int(i / group-size)
-  let cc = cetz.canvas({
-    (colors_,colors) = colors_()
-    (tilt_,tilt) = tilt_()
-    (angles_,angles) = angles_()
-    (circles_,circles) = circles_()
-    let symbols = c.map(n => nimi.nth(n))
-    card(scale-factor,
-      //debug: true,
-      edge: (cut: false, margin: false),
-      symbols: symbols,
-      circles: circles,
-      angles: angles,
-      colors: colors,
-      global-tilt: tilt,
-    )
-    for (symb,pos,col) in symbols.zip(circles, colors) {
-      if symb not in distributions {
-        distributions.insert(symb, ())
+#{
+  for (i,c) in cards.slice(0).enumerate() {
+    let dnum = int(i / group-size)
+    let cc = cetz.canvas({
+      (colors_,colors) = colors_()
+      (tilt_,tilt) = tilt_()
+      (angles_,angles) = angles_()
+      (circles_,circles) = circles_()
+      let symbols = c.map(n => nimi.nth(n))
+      card(scale-factor,
+        //debug: true,
+        edge: (cut: false, margin: false),
+        symbols: symbols,
+        circles: circles,
+        angles: angles,
+        colors: colors,
+        global-tilt: tilt,
+      )
+      for (symb,pos,col) in symbols.zip(circles, colors) {
+        if symb not in distributions {
+          distributions.insert(symb, ())
+        }
+        distributions.at(symb).push((seed: seed-names.at(dnum), size: pos.at(2), color: col))
       }
-      distributions.at(symb).push((seed: seed-names.at(dnum), size: pos.at(2), color: col))
-    }
-  })
-  box(cc, inset: 1pt)
-  rendered.push(cc)
+    })
+    box(cc, inset: 1pt)
+    rendered.push(cc)
+  }
 }
 
 #pagebreak()
@@ -163,31 +165,35 @@
   symbol-color: seed-names.map(n => (n,0)).to-dict(),
   symbol-size: seed-names.map(n => (n,0)).to-dict(),
 )
-#for (nimi, data) in distributions {
-  box(width: 100%)[
-    #sp(50pt)[#nimi]
-    #for (i, elt) in data.enumerate() {
-      for other in data.slice(0, i) {
-        if other.color == elt.color {
-          seed-score.symbol-color.at(elt.seed) += calc.pow(elt.size + other.size, 2)
+#{
+  for (nimi, data) in distributions {
+    box(width: 100%)[
+      #sp(50pt)[#nimi]
+      #{
+        for (i, elt) in data.enumerate() {
+          for other in data.slice(0, i) {
+            if other.color == elt.color {
+              seed-score.symbol-color.at(elt.seed) += calc.pow(elt.size + other.size, 2)
+            }
+            seed-score.symbol-size.at(elt.seed) += calc.pow(elt.size - other.size, 2)
+          }
+          [(#elt.seed)]
+          box[#circle(radius: elt.size * 1pt, fill: elt.color)]
         }
-        seed-score.symbol-size.at(elt.seed) += calc.pow(elt.size - other.size, 2)
       }
-      [(#elt.seed)]
-      box[#circle(radius: elt.size * 1pt, fill: elt.color)]
-    }
-  ]
+    ]
+  }
 }
 
 #[
-#set text(30pt)
-= Seed score for colors (lower is better)
-#for (seed, score) in seed-score.symbol-color {
-  [#seed: #score \ ]
-}
+  #set text(30pt)
+  = Seed score for colors (lower is better)
+  #{for (seed, score) in seed-score.symbol-color {
+    [#seed: #score \ ]
+  }}
 
-= Seed score for sizes (higher is better)
-#for (seed, score) in seed-score.symbol-size {
-  [#seed: #score \ ]
-}
+  = Seed score for sizes (higher is better)
+  #{for (seed, score) in seed-score.symbol-size {
+    [#seed: #score \ ]
+  }}
 ]
