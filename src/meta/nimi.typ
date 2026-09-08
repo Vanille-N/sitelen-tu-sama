@@ -4,10 +4,11 @@
 #let x-jaki = (weka: (color: purple, order: 5), status: "ala")
 #let x-pilin = (weka: (color: blue, order: 1), status: "ala")
 #let w-sin = (lukin: (color: rgb("00dddddd")))
+#let w-nasa = (nasa: ())
 
 #let nimi = (
   "a": (:),
-  "akesi2": (alts: ("akesi",)),
+  "akesi": (var: "2", alts: ("",)),
   "ala": (sama: ("en",)),
   "alasa": (:),
   "ale": (:),
@@ -57,10 +58,10 @@
   "ma": (:),
   "mama": (:),
   "mani": (sama: ("jan", "mije")),
-  "mi2": (alts: ("mi",), sama: ("ona2", "sina2")),
+  "mi": (var: "2", alts: ("",), sama: ("ona2", "sina2")),
   "moku": (:),
-  "moli": (alts: ("moli2",)),
-  "monsi2": (alts: ("monsi",), sama: ("anpa", "sewi2", "sinpin")),
+  "moli": (alts: ("2",)),
+  "monsi": (var: "2", alts: ("",), sama: ("anpa", "sewi2", "sinpin"), ..w-nasa),
   "mu": (:),
   "mun": (:),
   "musi": (:),
@@ -73,15 +74,15 @@
   "nimi": (sama: ("palisa", "lipu"), ..x-sama),
   "noka": (:),
   "o": (:),
-  "olin1": (alts: ("olin2", "olin")),
-  "ona2": (sama: ("mi2", "sina2"), alts: ("ona",), ..x-sama),
+  "olin": (var: "1", alts: ("2", "")),
+  "ona": (var: "2", sama: ("mi2", "sina2"), alts: ("",), ..x-sama),
   "open": (:),
   "pakala": (:),
   "pali": (:),
   "palisa": (sama: ("nimi",)),
   "pan": (:),
   "pana": (:),
-  "pi(nimi)": (alts: ("pi",), sama: ("suli", "lili", "li"), ..x-pilin),
+  "pi": (var: "(nimi)", alts: ("pi",), sama: ("suli", "lili", "li"), ..x-pilin),
   "pilin": (sama: ("wile2",)),
   "pimeja": (:),
   "pini": (:),
@@ -94,12 +95,12 @@
   "seli": (:),
   "selo": (:),
   "seme": (:),
-  "sewi": (alts: ("sewi2",), sama: ("anpa", "sinpin", "monsi")),
+  "sewi": (alts: ("2",), sama: ("anpa", "sinpin", "monsi")),
   "sijelo": (:),
   "sike": (:),
   "sin": (:),
-  "sina2": (sama: ("mi2", "ona2"), alts: ("sina",), ..x-sama),
-  "sinpin2": (alts: ("sinpin",), sama: ("anpa", "monsi", "sewi2"), ..x-pilin),
+  "sina": (var: "2", sama: ("mi2", "ona2"), alts: ("",), ..x-sama),
+  "sinpin": (var: "2", alts: ("",), sama: ("anpa", "monsi", "sewi2"), ..x-pilin),
   "sitelen": (:),
   "sona": (:),
   "soweli": (:),
@@ -113,7 +114,7 @@
   "telo": (sama: ("kon",)),
   "tenpo": (:),
   "toki": (:),
-  "tomo2": (alts: ("tomo",), sama: ("kiwen",)),
+  "tomo": (var: "2", alts: ("",), sama: ("kiwen",)),
   "tu": (sama: ("sama",)),
   "unpa": (:),
   "uta": (alts: ("uta2",)),
@@ -125,42 +126,42 @@
   "weka": (sama: ("namako",)),
   "wile": (alts: ("wile2",), sama: ("pilin",)),
   "kijetesantakalu": (:),
-  "kin": (:),
-  "kipisi": (alts: ("kipisi2",)),
+  "kin": (: ..w-nasa),
+  "kipisi": (alts: ("kipisi2",), ..w-nasa),
   "ku": (: ..x-jaki),
-  "leko": (:),
+  "leko": (: ..w-nasa),
   "meli": (alts: ("meli2", "meli3"), sama: ("soko",)),
   "mije": (alts: ("mije2", "mije3"), sama: ("jan", "mani")),
-  "misikeke": (:),
-  "monsuta": (:),
+  "misikeke": (: ..w-nasa),
+  "monsuta": (: ..w-nasa),
   "n": (: ..x-kalama),
-  "namako2": (alts: ("namako",), sama: ("weka",)),
-  "soko": (alts: ("soko1", "soko2"), sama: ("lape", "meli2")),
-  "tonsi": (:),
-  "epiku": (alts: ("epiku1",), sama: ("ni",)),
-  "jasima": (:),
-  "lanpan": (alts: ("lanpan2",)),
-  "linluwi1": (alts: ("linluwi2", "linluwi4"), sama: ("len", "kulupu"), ..w-sin),
-  "majuna2": (alts: ("majuna",), sama: ("sin",)),
-  "meso": (:),
-  "nimisin": (:),
+  "namako": (var: "2", alts: ("",), sama: ("weka",), ..w-nasa),
+  "soko": (alts: ("1", "2"), sama: ("lape", "meli2"), ..w-nasa),
+  "tonsi": (: ..w-nasa),
+  "epiku": (alts: ("epiku1",), sama: ("ni",), ..w-nasa),
+  "jasima": (: ..w-nasa),
+  "lanpan": (alts: ("lanpan2",), ..w-nasa),
+  "linluwi": (var: "1", alts: ("2", "4"), sama: ("len", "kulupu"), ..w-sin, ..w-nasa),
+  "majuna": (var: "2", alts: ("",), sama: ("sin",), ..w-nasa),
+  "meso": (: ..w-nasa),
+  "nimisin": (: ..w-nasa),
   "oko": (:),
   "su": (: ..x-jaki),
-  "apeja": (:),
+  "apeja": (: ..w-nasa),
   "isipin": (sama: ("kokosila",), ..x-sama),
   "jami": (: ..x-pilin),
   "kamalawala": (: ..x-rare),
   "kapesi": (: ..w-sin, ..x-pilin),
-  "kiki1": (alts: ("kiki2",), ..w-sin),
-  "kokosila": (sama: ("isipin",), ..w-sin),
-  "konwe": (: ..w-sin),
+  "kiki": (var: "1", alts: ("2",), ..w-sin, ..w-nasa),
+  "kokosila": (sama: ("isipin",), ..w-sin, ..w-nasa),
+  "konwe": (: ..w-sin, ..w-nasa),
   "kulijo": (: ..x-pilin),
   "melome": (: ..x-jaki),
   "mijomi": (: ..x-jaki),
   "misa": (alts: ("misa2", "misa3", "misa4"), ..w-sin, ..x-pilin),
-  "nja": (: ..w-sin),
+  "nja": (: ..w-sin, ..w-nasa),
   "ojuta": (: ..x-rare),
-  "oke1": (: ..w-sin),
+  "oke": (var: "1", ..w-sin, ..w-nasa),
   "omekapo": (: ..x-pilin),
   "owe": (: ..x-rare),
   "pake": (sama: ("taso",), ..x-sama),
@@ -169,16 +170,16 @@
   "po": (: ..x-pilin),
   "powe": (: ..x-pilin, sama: ("lon",)),
   "puwa": (: ..x-rare),
-  "san1": (alts: ("san2", "san3"), sama: ("mute",), ..x-pilin),
+  "san": (var: "1", alts: ("2", "3"), sama: ("mute",), ..x-pilin),
   "soto": (sama: ("teje",), ..x-sama),
   "sutopatikuna": (: ..x-rare),
-  "taki1": (alts: ("taki2",), ..w-sin, ..x-pilin),
-  "teje": (sama: ("soto",), ..w-sin),
-  "unu": (: ..w-sin),
-  "usawi": (: ..w-sin),
-  "wa": (: ..w-sin),
+  "taki": (var: "1", alts: ("2",), ..w-sin, ..x-pilin),
+  "teje": (sama: ("soto",), ..w-sin, ..w-nasa),
+  "unu": (: ..w-sin, ..w-nasa),
+  "usawi": (: ..w-sin, ..w-nasa),
+  "wa": (: ..w-sin, ..w-nasa),
   "wasoweli": (: ..x-rare),
-  "wekama": (: ..w-sin),
+  "wekama": (: ..w-sin, ..w-nasa),
   "wuwojiti": (: ..x-kalama),
   "yupekosi": (: ..x-pilin),
 )
@@ -369,9 +370,15 @@
 
 #set page(height: 50cm, width: 50cm)
 
+#let chosen-variant(chr) = {
+  let info = nimi.at(chr)
+  chr + info.at("var", default: "")
+}
+
 #let place-symbol(chr, sz, center: (0,0), color: black, angle: 0deg) = {
   import cetz.draw
-  let info = nimi.at(chr, default: (:))
+  let info = nimi.at(chr)
+  let chr = chosen-variant(chr)
   let adjust = visuals.at(chr, default: (:))
 
   let mul = if "scale" in adjust { 100% + adjust.scale } else { 100% }
@@ -382,7 +389,7 @@
 
 #let draw-block(chr, num) = {
   let info = nimi.at(chr)
-  let adjust = visuals.at(chr)
+  let adjust = visuals.at(chr + info.at("var", default: ""))
   cetz.canvas({
     import cetz.draw: *
     let sz = 30pt
@@ -400,7 +407,7 @@
       line((-2,-2), (2,2), stroke: info.weka.color + 2pt)
       line((2,-2), (-2,2), stroke: info.weka.color + 2pt)
     }
-    
+
     circle((0,0), stroke: red, radius: sz, fill: white)
     circle((0,0), stroke: blue, radius: sz - 2pt, fill: white)
 
@@ -408,23 +415,29 @@
 
     for (i, other) in info.at("sama", default: ()).enumerate() {
       let w = 8mm
-      let color = if other not in nimi {
-        green
-      } else if "weka" in nimi.at(other) {
+      let other-base = other.replace(regex("[0-9]"), "")
+      let color = if other-base not in nimi {
         green
       } else {
-        red
+        let other-info = nimi.at(other-base)
+        if "weka" in other-info {
+          green
+        } else if other-base + other-info.at("var", default: "") != other {
+          green
+        } else {
+          red
+        }
       }
       rect((-2cm + i * (w + 1mm) + 1mm, -2cm + 1mm), (-2cm + (i + 1) * (w + 1mm), -2cm + 1mm + w), stroke: color, fill: white)
       let c = (-2cm + (i + 0.5) * (w + 1mm) + 0.5mm, -2cm + 1mm + w/2)
-      place-symbol(other, 25pt, center: c)
+      content(c)[#sp(25pt, other)]
     }
 
     for (i, alt) in info.at("alts", default: ()).enumerate() {
       let w = 8mm
       rect((-2cm + i * (w + 1mm) + 1mm, 2cm - 1mm), (-2cm + (i + 1) * (w + 1mm), 2cm - 1mm - w), fill: white)
       let c = (-2cm + (i + 0.5) * (w + 1mm) + 0.5mm, 2cm - 1mm - w/2)
-      place-symbol(alt, 25pt, center: c)
+      content(c)[#sp(25pt, chr + alt)]
     }
   })
 }
@@ -440,14 +453,14 @@
   *sewi teje:* nanpa. mi wile jo e nimi 133.
 ]
 
-#box(draw-block("kiki1", [1]), baseline: 80%)
+#box(draw-block("kiki", [1]), baseline: 80%)
 #box[
   #set text(20pt)
   *nimi o lon*, taso ken la, jan li sona ala e nimi. \
   sina ken toki e ni tawa mi: "mi wile weka e nimi ni, li wile namako e nimi ante ni"
 ]
 
-#box(draw-block("san1", [1]), baseline: 80%)
+#box(draw-block("san", [1]), baseline: 80%)
 #box[
   #set text(20pt)
   *nimi o weka* tan ni: \
@@ -510,7 +523,9 @@
   nimi-oke.at(n)
 }
 
-#for sym in nimi.keys().sorted(key: k => nimi.at(k).at("weka", default: (order: 0)).order) {
-  let info = nimi.at(sym)
-  [(`"`#sym`"`, `"`#info.at("status", default: "ok")`"`), ]
+#{
+  for sym in nimi.keys().sorted(key: k => nimi.at(k).at("weka", default: (order: 0)).order) {
+    let info = nimi.at(sym)
+    [(`"`#sym`"`, `"`#info.at("status", default: "ok")`"`), ]
+  }
 }
