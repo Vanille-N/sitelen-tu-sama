@@ -9,8 +9,9 @@
 #let inner-stroke = rgb("00ffff")
 #let outer-stroke = rgb("ff00ff")
 
-#let card-template(edge: (:), color: white, drop-margins: none, __unsafe-decrease-size: 0pt) = {
+#let card-template(edge: (:), padding: auto, color: white, drop-margins: none, __unsafe-decrease-size: 0pt) = {
   import cetz.draw: *
+  let outer-padding = if padding == auto { outer-padding } else { padding }
   let side = side - __unsafe-decrease-size
   let small = side / 2 - inner-padding
   let mid = side / 2

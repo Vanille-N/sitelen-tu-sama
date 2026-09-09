@@ -12,15 +12,15 @@
   margin: margin,
 )
 
-#for i in range(recto.rendered.len()) {
+#{for i in range(recto.ready.len()) {
   //place(rect(width: 100%, height: 100%))
-  move(dx: -specs.outer-padding, dy: -specs.outer-padding, recto.rendered.at(i))
+  move(dx: -specs.outer-padding, dy: -specs.outer-padding, recto.render(recto.ready.at(i), padding: specs.outer-padding, edge: (cut: false, margin: false)))
   pagebreak(weak: true)
   move(dx: -specs.outer-padding, dy: -specs.outer-padding, {
     import "@preview/cetz:0.5.2"
     cetz.canvas({
-      verso.card(edge: (cut: false, margin: false), hidden-text: help.pad3dig(i))
+      verso.card(edge: (cut: false, margin: false), padding: specs.outer-padding, hidden-text: help.pad3dig(i))
     })
   })
   pagebreak(weak: true)
-}
+}}

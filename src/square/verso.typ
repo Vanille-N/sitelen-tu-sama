@@ -22,17 +22,15 @@
   }]
 ]
 
-#let as-tiling = tiling(size: (17.7mm, 10.25mm))[#pattern]
+#let as-tiling(offset) = tiling(size: (17.7mm, 10.25mm), offset: offset)[#pattern]
 
-// TODO: fint a nicer regular font
-
-#let card(edge: (:), hidden-text: none) = {
+#let card(edge: (:), padding: 0pt, hidden-text: none) = {
   import cetz.draw: *
-  specs.card-template(edge: edge, color: as-tiling)
-  
+  specs.card-template(edge: edge, padding: padding, color: as-tiling((padding,padding)))
+
   if hidden-text != none {
-   rect((-2.7,-2.1), (to:(), rel:(5mm,4mm)), fill: palette.dark.gray, stroke: none)
-   content((-2.47,-1.92))[#mono(palette.standard.gray, size: 11pt)[#hidden-text]]
+   rect((-2.53cm,-2.3cm), (to:(), rel:(5mm,4mm)), fill: palette.dark.gray, stroke: none)
+   content((-2.27,-2.1))[#mono(palette.standard.gray, size: 11pt)[#hidden-text]]
   }
   for c in ((0,0), (1.5,0), (0,1.5), (-1.5,0), (0,-1.5)) {
     circle(c, radius: specs.side * 15%, fill: palette.standard.black, stroke: none)
@@ -52,14 +50,14 @@
   card(edge: (margin: true))
 }), inset: 1pt)
 #box(cetz.canvas({
-  card(edge: (cut: true, margin: true), hidden-text: [888])
+  card(edge: (cut: true, margin: true), padding: 2cm, hidden-text: [888])
 }), inset: 1pt)
 #box(cetz.canvas({
-  card(edge: (cut: false), hidden-text: [000])
+  card(edge: (cut: true, margin: true), padding: 2mm, hidden-text: [000])
 }), inset: 1pt)
 #box(cetz.canvas({
-  card(edge: (cut: false), hidden-text: [111])
+  card(edge: (cut: true, margin: true), padding: 0pt, hidden-text: [111])
 }), inset: 1pt)
 #box(cetz.canvas({
-  card(edge: (cut: false), hidden-text: [042])
+  card(edge: (cut: true, margin: true), hidden-text: [042])
 }), inset: 1pt)
