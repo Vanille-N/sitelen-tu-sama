@@ -371,13 +371,13 @@
 #set page(height: 50cm, width: 50cm)
 
 #let chosen-variant(chr) = {
-  let info = nimi.at(chr)
+  let info = nimi.at(chr, default: (:))
   chr + info.at("var", default: "")
 }
 
 #let place-symbol(chr, sz, center: (0,0), color: black, angle: 0deg) = {
   import cetz.draw
-  let info = nimi.at(chr)
+  let info = nimi.at(chr, default: (:))
   let chr = chosen-variant(chr)
   let adjust = visuals.at(chr, default: (:))
 

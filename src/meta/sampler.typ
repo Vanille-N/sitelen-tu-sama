@@ -2,7 +2,8 @@
 
 /// Takes a generator function and wraps it
 /// so that it can be called multiple times
-#let repeatable(func, reseed-intv: 0, seeds: (0,)) = {
+#let repeatable(func, reseed-intv: 0, seeds: (0,), seed: auto) = {
+  if seed != auto { seeds = (seed,) }
   let rng = suiji.gen-rng(seeds.at(0))
   let next(rng,num,seed-idx) = () => {
     let seed-idx = seed-idx
@@ -17,6 +18,12 @@
     (next(rng,num+1,seed-idx), ans)
   }
   (next(rng,0,0), none)
+}
+
+#let once(func, seed: 0) = {
+  let rng = suiji.gen-rng(seed)
+  let (_, ans) = func(rng)
+  ans
 }
 
 /// Uniform sampling of angles

@@ -52,8 +52,8 @@
   set text(20pt, palette.dark.blue)
   c
 }
-#let body(c) = {
+#let body(c, size: 14pt) = {
   show: par.with(leading: 5pt)
-  set text(14pt, palette.dark.gray)
+  set text(size, palette.dark.gray)
   c
 }
