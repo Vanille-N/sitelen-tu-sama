@@ -24,7 +24,6 @@
 
 #set page(flipped: true, margin: (y: 1cm, x: 3mm))
 
-
 #let decrease = 8.5mm
 #let true-free-space = specs.side - 2 * specs.inner-padding - decrease
 #let side(border: white, edge: (:), linebreaks: (), ..pages) = {
@@ -95,21 +94,20 @@
     ]
   
 #let contents = section[
-      #sp[#heading[seme li lon ijo musi]]
+      #sp[#heading[mute lipu li tan seme]]
       #sp[#body[
-      nanpa wan la, li jo e poki. o pana e lipu ale lon insa poki. \
-      nanpa tu la, lipu pi(ale mute2 luka luka tu wan) li lon #unsp[#h(5mm) (133)] \
-      nanpa tu wan la, lipu wan pi(sona nasin) li lon. sina2 lukin e ona2. \
+      lipu pi(ale mute2 luka luka tu wan) li lon. #unsp[(133)] \
+      ale la, sitelen pi(ale mute2 luka luka tu wan) li lon. #unsp[(133)] \
+      lipu ale la, sitelen pi(luka luka tu) li lon. #unsp[(12)] \
+      sitelen ale li lon lipu pi(luka luka tu). #unsp[(12)] \
       \
-      lipu ale la, sitelen pi(luka luka tu) li lon #unsp[#h(5mm) (12)] \
-      ale la, sitelen pi(ale mute2 luka luka tu wan) li lon #unsp[#h(5mm) (133)] \
-      #h(5mm) ni3 li mute sama tan nanpa lipu a. ni4 li pona tan ni8. \
+      . mute ni3 li sama tan nasin pona. \
       #h(5mm) kepeken sona nanpa la, jan li ken sona pona e ni8 \
       #h(10mm) sitelen ale tu la, sitelen tu li sama. \
       #h(10mm) sitelen ale tu la, sitelen tu taso li sama
     ]]
     #place(center + horizon, dx: 2cm, dy: 2.2cm)[#sp(55pt, palette.standard.purple)[musi]]
-    #place(right + horizon, dy: -2mm)[#sp(45pt, cc("y-"))[nanpa]]
+    #place(right + horizon, dy: -2mm)[#sp(70pt, cc("y-"))[nanpa]]
     #place(bottom + left)[#sp(40pt, cc("b-"))[nasin]]
   ]
   
@@ -285,7 +283,7 @@
 }
 
 #let front-page(card) = {
-  move(dy: -4.5mm, dx: -4.5mm, scale(87%, reflow: true, {
+  move(dy: -2mm, dx: -2mm, scale(87%, reflow: true, {
     card
   }))
 }
@@ -293,7 +291,7 @@
 #let back-side(num) = {
   move(dx: -10mm, dy: -10mm, cetz.canvas({
     import "verso.typ"
-    verso.card(hidden-text: help.pad3dig(num))
+    verso.card(padding: 2.5mm, hidden-text: help.pad3dig(num))
   }))
 }
 
@@ -322,7 +320,7 @@
     back-side(num),
     obscure-1,
     obscure-2,
-    front-page(recto.rendered.at(num)),
+    front-page(recto.render(edge: (cut: false), recto.ready.at(num))),
   )
 }
 
