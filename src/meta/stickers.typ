@@ -6,19 +6,19 @@
 #import "nimi.typ"
 
 #let standard-forced = (
-  "meli mije tonsi jan mi musi sitelen sona",
+  "jan musi sitelen sona olin kule",
 ).map(s => s.split(" ")).flatten()
 
 #let standard-random = (
   "soweli akesi pipi esun alasa ilo kepeken kasi",
-  "kule laso walo pimeja loje jelo",
+  "laso walo pimeja loje jelo",
   "kulupu len luka ma mani kalama",
-  "mun suno nasa nasin olin pakala open pan pana",
+  "mun suno nasa nasin pakala open pan pana",
   "pilin sewi sona tenpo toki tomo unpa waso wile",
 ).map(s => s.split(" ")).flatten()
 
 #let weird-forced = (
-  "ma+pona toki+pona lipu&tenpo kijetesantakalu",
+  "toki+pona kijetesantakalu",
 ).map(s => s.split(" ")).flatten()
 
 #let weird-random = (
@@ -35,29 +35,27 @@
   }), inset: 2pt)
 }
 
-#let sticker-pack(words, seed: 0) = {
+#let sticker-pack(words, sizes: (1.3cm,), seed: 0) = {
   let (color_,color) = sampler.repeatable(sampler.choice(..palette.symbol-colors), seed: 1000 + seed)
-  let size = 1.3cm
-
-  //  weird-forced + sampler.once(sampler.shuffle(weird-random, size: extra), seed: seed)
+  let words = sampler.once(sampler.shuffle(words), seed: 1001 + seed)
   let stickers = ()
-  for w in words {
+  for (i, w) in words.enumerate() {
     (color_,color) = color_()
-    //(size_,size) = size_()
+    let size = sizes.at(calc.rem(i, sizes.len()))
     stickers.push((size: size, stk: sticker(w, size, color)))
   }
   stickers.sorted(key: x => -x.size).map(x => x.stk)
 }
 
-#let fixed-pack(seed: 0) = {
+#let fixed-pack(sizes: (1.3cm,), seed: 0) = {
   let fixed-words = standard-forced + weird-forced
-  sticker-pack(fixed-words, seed: 3000 + seed)
+  sticker-pack(fixed-words, seed: 3000 + seed, sizes: sizes)
 }
 
-#let random-pack(nstd, nextra, seed: 0) = {
+#let random-pack(nstd, nextra, sizes: (1.3cm,), seed: 0) = {
   let random-words = sampler.once(sampler.shuffle(standard-random, size: nstd), seed: 2000 + seed) + sampler.once(sampler.shuffle(weird-random, size: nextra), seed: 2001 + seed)
-  sticker-pack(random-words, seed: 2002 + seed)
+  sticker-pack(random-words, seed: 2002 + seed, sizes: sizes)
 }
 
-#for s in fixed-pack() { s }
-#for s in random-pack(3, 1) { s }
+#{for s in fixed-pack() { s }}
+#{for s in random-pack(3, 1) { s }}

@@ -5,7 +5,7 @@
 #let outer-padding = 2mm
 #let side = 80mm
 
-#let cut-stroke = (dash: "dashed", thickness: 0.5pt)
+#let cut-stroke = (dash: "dashed", thickness: 0.2pt)
 #let inner-stroke = rgb("00ffff")
 #let outer-stroke = rgb("ff00ff")
 

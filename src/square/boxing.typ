@@ -262,7 +262,7 @@
       place(top + left)[
         #sp[#heading[seme li lon insa poki]]
         #v(-3mm)
-        #box(inset: (x: 2pt), sp[#body(size: 12pt)[
+        #box(inset: (x: 2pt), sp[#body(size: 11pt)[
           nanpa wan la, poki li jo e lipu musi. sitelen pona li lon lipu ale. \
           nanpa tu la, li jo e lipu pi(sona musi).
             sina2 ken kama sona e nasin musi tan lukin e ona2. \
@@ -274,11 +274,11 @@
       place(bottom + left, scale(x: -100%, sp(70pt, cc("g"))[kii ii]))
       place(bottom + right, sp(70pt, cc("p"))[kii ii])
       place(bottom + center)[
-        #box(rotate(10deg, reflow: true, sp(20pt, cc("g-"))[olin1]))
-        #box(rotate(-10deg, reflow: true, sp(30pt, cc("g+"))[olin1]))
-        #box(rotate(3deg, reflow: true, sp(40pt, cc("k-"))[olin1]))
-        #box(rotate(7deg, reflow: true, sp(30pt, cc("p+"))[olin1]))
-        #box(rotate(-5deg, reflow: true, sp(20pt, cc("p-"))[olin1]))
+        #box(rotate(10deg, reflow: true, sp(17pt, cc("g-"))[olin1]))
+        #box(rotate(-10deg, reflow: true, sp(22pt, cc("g+"))[olin1]))
+        #box(rotate(3deg, reflow: true, sp(30pt, cc("k-"))[olin1]))
+        #box(rotate(7deg, reflow: true, sp(22pt, cc("p+"))[olin1]))
+        #box(rotate(-5deg, reflow: true, sp(17pt, cc("p-"))[olin1]))
       ]
     }))
   )

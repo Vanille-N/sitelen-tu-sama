@@ -88,7 +88,7 @@
           text(palette.standard.orange)[suno],
         ))
         bezier((to:"a_0",rel:(0.15,0.27)), (to:"b_1",rel:(-0.15,0.1)), (2,1), mark: (start: ">", end: ">", scale: 0.4), stroke: palette.dark.gray)
-        bezier((to:"a_3",rel:(0.1,-0.17)), (to:"c_2",rel:(-0.2,0.05)), (0.6,-1.5), mark: (start: ">", end: ">", scale: 0.4), stroke: palette.dark.gray)
+        bezier((to:"a_3",rel:(0.1,-0.17)), (to:"c_2",rel:(-0.25,-0.05)), (0.6,-1.5), mark: (start: ">", end: ">", scale: 0.4), stroke: palette.dark.gray)
         bezier((to:"b_3",rel:(-0.15,-0.3)), (to:"c_0",rel:(0.25,-0.1)), (3.5,-1.2), mark: (start: ">", end: ">", scale: 0.4), stroke: palette.dark.gray)
       })]
     ]
@@ -98,13 +98,13 @@
       #sp[#body[
       lipu pi(ale mute2 luka luka tu wan) li lon. #unsp[(133)] \
       ale la, sitelen pi(ale mute2 luka luka tu wan) li lon. #unsp[(133)] \
-      lipu ale la, sitelen pi(luka luka tu) li lon. #unsp[(12)] \
+      lipu wan ale la, sitelen pi(luka luka tu) li lon. #unsp[(12)] \
       sitelen ale li lon lipu pi(luka luka tu). #unsp[(12)] \
       \
       . mute ni3 li sama tan nasin pona. \
-      #h(5mm) kepeken sona nanpa la, jan li ken sona pona e ni8 \
-      #h(10mm) sitelen ale tu la, sitelen tu li sama. \
-      #h(10mm) sitelen ale tu la, sitelen tu taso li sama
+      .. kepeken sona nanpa la, jan li ken sona pona e ni8 \
+      .. . lipu ale tu la, sitelen tu li sama. \
+      .. . lipu ale tu la, sitelen tu taso li sama
     ]]
     #place(center + horizon, dx: 2cm, dy: 2.2cm)[#sp(55pt, palette.standard.purple)[musi]]
     #place(right + horizon, dy: -2mm)[#sp(70pt, cc("y-"))[nanpa]]
@@ -114,14 +114,14 @@
 #let how-to-play = section[
       #sp[#heading[nasin musi li seme]]
       #sp[#body[
-        jan ale pi(wile musi), o lon poka #sp(cc("k+"))[supa], o kama jo e lipu wan taso \
-        lipu ale ante li #sp(cc("g"))[kulupu lon meso] #sp(cc("k+"))[supa]. musi li open a \
+        jan ale pi(wile musi), o lon poka #sp(cc("k+"))[supa], o kama jo e lipu wan \
+        lipu ale ante li #sp(cc("g"))[kulupu lon meso] #sp(cc("k+"))[supa].. musi li open a \
         o alasa e sitelen sama lon #sp(cc("b"))[lipu pi(sewi2 kulupu sina2)]
           en #sp(cc("g"))[lipu pi(sewi2 kulupu meso)]. \
         sina2 sona la, o toki wawa e #sp(cc("y"))[nimi ona2]. sina2 wile toki nanpa wan. \
-        lipu li tawa sewi2 #sp(cc("b"))[pi(kulupu pi(jan nanpa wan))],
+        lipu li tawa sewi2 #sp(cc("b"))[pi(kulupu pi(jan nanpa wan))]..
         #sp(cc("g"))[lipu pi(sewi2 kulupu meso)] li kama ante \
-        o alasa kin. #sp(cc("g"))[kulupu lipu meso] li pini la, o nanpa e lipu lon #sp(cc("b"))[kulupu sina2]. \
+        o alasa kin.. #sp(cc("g"))[kulupu lipu meso] li pini la, o nanpa e lipu lon #sp(cc("b"))[kulupu sina2]. \
         jan wan li jo e lipu mute namako tawa jan ale la, ona2 li wawa nanpa wan
       ]]
       #place(right + horizon, dy: -14mm)[#sp(cc("o-"), 45pt)[alasa]]
@@ -170,7 +170,7 @@
         content((3,1))[#sp(35pt, palette.dark.gray)[toki]]
         content((3,0.91))[#sp(13pt, palette.standard.yellow)[kijetesantakalu]]
         bezier((2.46,0.75), (2.8,0.7), (2.6,0.6), stroke: palette.standard.gray)
-        bezier((0.1,1.42), (0.8,1.25), (0.6,1.6), mark: (end: ">", scale: 0.4), stroke: palette.standard.gray)
+        bezier((0.17,1.42), (0.8,1.25), (0.6,1.6), mark: (end: ">", scale: 0.4), stroke: palette.standard.gray)
       })]]
   ]
 
