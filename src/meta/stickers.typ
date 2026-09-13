@@ -6,12 +6,12 @@
 #import "nimi.typ"
 
 #let standard-forced = (
-  "jan musi sitelen sona olin kule",
+  "sitelen",
 ).map(s => s.split(" ")).flatten()
 
 #let standard-random = (
   "soweli akesi pipi esun alasa ilo kepeken kasi",
-  "laso walo pimeja loje jelo",
+  "laso walo pimeja loje jelo jan musi sona olin kule mi seme",
   "kulupu len luka ma mani kalama",
   "mun suno nasa nasin pakala open pan pana",
   "pilin sewi sona tenpo toki tomo unpa waso wile",
@@ -29,15 +29,19 @@
 
 #let sticker(w, sz, color) = {
   box(cetz.canvas({
+    let cut-stroke = (thickness: 0.2pt, paint: gray, dash: "dashed")
     import cetz.draw: *
-    circle((), radius: sz * 1.2, stroke: (thickness: 0.2pt, paint: gray, dash: "dashed"))
+    rect((-sz*1.2,-sz*1.2), (0,0), stroke: cut-stroke, radius: 20%)
+    circle((), radius: sz * 1.2, stroke: cut-stroke, fill: white)
     nimi.place-symbol(w, 2 * sz, color: color)
   }), inset: 2pt)
 }
 
-#let sticker-pack(words, sizes: (1.3cm,), seed: 0) = {
+#let sticker-pack(words, sizes: (1.3cm,), seed: 0, shuffle-words: true) = {
   let (color_,color) = sampler.repeatable(sampler.choice(..palette.symbol-colors), seed: 1000 + seed)
-  let words = sampler.once(sampler.shuffle(words), seed: 1001 + seed)
+  let words = if not shuffle-words { words } else {
+    sampler.once(sampler.shuffle(words), seed: 1001 + seed)
+  }
   let stickers = ()
   for (i, w) in words.enumerate() {
     (color_,color) = color_()
@@ -49,7 +53,7 @@
 
 #let fixed-pack(sizes: (1.3cm,), seed: 0) = {
   let fixed-words = standard-forced + weird-forced
-  sticker-pack(fixed-words, seed: 3000 + seed, sizes: sizes)
+  sticker-pack(fixed-words, seed: seed, shuffle-words: false, sizes: sizes)
 }
 
 #let random-pack(nstd, nextra, sizes: (1.3cm,), seed: 0) = {

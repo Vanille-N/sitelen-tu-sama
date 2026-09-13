@@ -10,7 +10,7 @@ Du hältst ein Exemplar des Spiels
 "#sp(cc("o"))[sitelen tu sama]" (sitelen tu sama),
 entwickelt von #sp(cc("g"))[jan [Newen]] (Newen). \
 Dieses Spiel ist eine Version von #unsp(cc("r"))["Dobble"],
-die die Toki-Pona-Hieroglyphen verwendet. \
+mit Toki-Pona-Hieroglyphen als Symbolen. \
 \
 Wie im Originalspiel suchst du das eine
 Symbol, das auf zwei beliebigen Karten vorkommt
@@ -24,11 +24,11 @@ Viel Spaß!
 
 #let class-title = [Klassifizierung der Symbole]
 #let class-intro = [
-  Um Ihnen bei der Identifizierung eines Symbols zu helfen,
-  wurde diese Liste danach gegliedert,
-  ob die Symbole *getrennte Elemente*,
-  *Punkte*, *umschlossene Flächen* und *geschwungene Linien* enthalten.
-  Insgesamt gibt es 133 davon.
+  Um dir bei der Identifizierung eines unbekannten Symbols zu helfen,
+  wurden die Symbole danach klassifiziert,
+  ob sie *getrennte Elemente*,
+  *Punkte*, *umschlossene Flächen* und *Kurven* enthalten.
+  Insgesamt gibt es 133 Symbole.
 ]
 
 #let plural(n, alt) = if n == 1 { "" } else { alt }
@@ -37,11 +37,11 @@ Viel Spaß!
 #let dot(nb) = [Punkt#plural(nb, "e")]
 #let area(nb) = [Fläche#plural(nb, "n")]
 #let curve(has) = {
-if has { [gekrümmte Linien] } else { [keine Kurven] }
+if has { [mit Kurven] } else { [ohne Kurven] }
 }
 
 #let copyright = [
-Sämtliches Text- und Bildmaterial des Spiels ist unter
+Sämtliches Text- und Bildmaterial des Spiels ist auf
 `github:vanille-n/sitelen-tu-sama` verfügbar
 und unter der Creative-Commons-Lizenz BY-NC-SA lizenziert. 
 Du darfst das Material frei weitergeben und verändern,
@@ -162,7 +162,7 @@ und das Material nicht für kommerzielle Zwecke verwendet wird.
   weka: [weg],
   wile: [Wunsch, wollen],
   monsuta: [Monster, Angst],
-  jasima: [Spiegel, symmetrisch],
+  jasima: [symmetrisch],
   kiki: [spitz],
   soko: [Pilz],
   oke: [okay],

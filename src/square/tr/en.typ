@@ -8,7 +8,7 @@
 #let intro = [
   You are in possession of a copy of the game
   "#sp(cc("o"))[sitelen tu sama]" (sitelen tu sama),
-  developped by #sp(cc("g"))[jan [Newen]] (Newen). \
+  developed by #sp(cc("g"))[jan [Newen]] (Newen). \
   This game is a version of #unsp(cc("r"))["Dobble"],
   made with toki pona hieroglyphs. \
   \
@@ -42,10 +42,10 @@
 }
 
 #let copyright = [
-  All material on this document and on other elements of the game
-  are available at `github:vanille-n/sitelen-tu-sama`,
+  All textual and graphical elements of the game are
+  published on the repository `github:vanille-n/sitelen-tu-sama`,
   and licensed under Creative Commons BY-NC-SA. \
-  You may freely distribute it and modify it as long as
+  You may freely distribute and modify them as long as
   copies or derived products are licensed under the same conditions,
   credit the original source ("jan Newen \<jan-Newen#"@"crans.org>"),
   and are not used for commercial purposes.
@@ -82,7 +82,7 @@
   kipisi: [cut],
   sin: [new],
   pan: [bread, grain],
-  suwi: [sween, cute],
+  suwi: [sweet, cute],
   anpa: [below, inferior],
   lon: [at, on, existing],
   teje: [right],
@@ -157,7 +157,7 @@
   kala: [fish],
   ko: [paste, flexible],
   mani: [valuable, money],
-  moku: [eat, foot],
+  moku: [eat, food],
   pali: [work, make],
   pilin: [feel],
   soko: [mushroom, mold],

@@ -40,13 +40,13 @@
 #import "/meta/nimi.typ"
 
 #let fmtable(lang, elts) = {
-  set text(size: 8pt, cc("k"))
-  table(columns: (1fr, 1fr), stroke: cc("a-") + 0.5pt, inset: (bottom: 2pt, top: 0.5pt),
+  set text(size: 9pt, cc("k"))
+  table(columns: (1fr, 1fr), stroke: cc("a-") + 0.5pt, inset: (bottom: 1.5pt, top: 0.3pt),
     ..elts.map(e => [
       #sp[#nimi.chosen-variant(e)]
-      #h(2mm)
+      #h(1mm)
       #e
-      #unsp(cc("a"), 6pt)[
+      #unsp(cc("a"), 9pt)[
         #hfit[(#lang.translated.at(e, default: text(cc("r-"))[missing]))]
       ]
     ])

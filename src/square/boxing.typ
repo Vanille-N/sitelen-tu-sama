@@ -292,18 +292,15 @@
 #rotbox[#top-side.at(2)]
 #rotbox[#top-side.at(3)]
 #bottom-face
-#let stks = stickers.random-pack(12, 6, seed: cardno)
+#let stks = stickers.random-pack(4, 3, seed: cardno, sizes: (19mm,) * 4 + (26mm,) * 3).rev()
 #box(baseline: bottom, {
   stks.at(0)
   stks.at(1)
   linebreak()
   stks.at(2)
   stks.at(3)
-  linebreak()
-  stks.at(4)
-  stks.at(5)
 })
-#stks.slice(6).join[]
+#stks.slice(4).join[]
 
 #credits
 #bottom-lining
@@ -311,12 +308,5 @@
 #rotbox(cancel: false)[#bottom-side.at(1)]
 #rotbox(cancel: false)[#bottom-side.at(2)]
 #rotbox(cancel: false)[#bottom-side.at(3)]
-#for s in stickers.fixed-pack(seed: cardno) { s }
+#{for s in stickers.fixed-pack(seed: cardno, sizes: (26mm, 26mm, 26mm)) { s }}
 
-// What to put on bottom-side ?
-// - seme li lon insa should go here
-//   In the rulebook I'll expand on the way the game works.
-//   (link to explanatory video ?)
-// - some cute drawings ?
-//   - (long) kijetesantakalu looking at cards
-// - cute lot of stickers

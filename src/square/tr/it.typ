@@ -28,7 +28,7 @@ Buon divertimento!
 Per aiutarti a identificare un simbolo sconosciuto,
 i simboli sono stati classificati in base alla presenza di
 *elementi disconnessi*, *aree chiuse*, *punti* e *linee curve*.
-In totale sono 133.
+Sono 133 in totale.
 ]
 
 #let plural(n, default, alt) = if n == 1 { default } else { alt }
@@ -42,13 +42,13 @@ if has { [linee curve] } else { [senza curve] }
 
 #let copyright = [
 Tutti i materiali testuali e grafici del gioco
-sono disponibili su `github:vanille-n/sitelen-tu-sama`
+sono disponibili gratuitamente sul repository `github:vanille-n/sitelen-tu-sama`
 e sono distribuiti con licenza Creative Commons BY-NC-SA. 
 Puoi distribuirli e modificarli liberamente, purché
 le copie e le opere derivate siano distribuite alle stesse condizioni,
 venga citata la fonte originale
 ("jan Newen \<jan-Newen#"@"crans.org>"),
-e non vengano utilizzati per scopi commerciali.
+e non vengano utilizzate per scopi commerciali.
 ]
 
 #let translated = (
@@ -93,7 +93,7 @@ insa: [interno, dentro],
 lukin: [guardare, vedere],
 lanpan: [rubare],
 poka: [lato, accanto],
-mu: [verso animale],
+mu: [verso di animale],
 a: [enfasi, esclamazione],
 e: [marcatore dell'oggetto],
 wa: [stupore],
@@ -115,27 +115,27 @@ pini: [finito, chiuso],
 selo: [pelle, guscio],
 suli: [grande],
 taso: [solo, ma],
-utala: [combattimento, violenza],
-monsuta: [spaventoso, paura],
+utala: [violenza],
+monsuta: [spaventoso],
 anu: [o],
 lete: [freddo],
 ni: [questo, quello],
-poki: [contenitore, scatola],
+poki: [contenitore],
 sijelo: [corpo, contenuto],
 supa: [tavolo],
 tawa: [andare, diventare],
 wan: [uno],
 ken: [potere, possibilità],
 luka: [mano],
-monsi: [dietro, parte posteriore],
+monsi: [dietro],
 noka: [piede, gamba],
-wile: [volere, avere bisogno],
+wile: [volere],
 pona: [buono, facile],
 linja: [linea, filo],
 lupa: [buco],
 nasa: [strano, bizzarro],
 tan: [da, perché],
-jasima: [riflesso, simmetria],
+jasima: [simmetria],
 kiwen: [pietra, duro],
 lipu: [documento, foglio],
 tomo: [casa, edificio],
@@ -155,13 +155,13 @@ suno: [sole, luminoso],
 tonsi: [non binario],
 jan: [persona],
 kala: [pesce, nuotare],
-ko: [pasta, morbido, malleabile],
+ko: [malleabile],
 mani: [prezioso, denaro],
 moku: [mangiare, cibo],
 pali: [lavorare, fare],
 pilin: [sentire, sentimento],
 soko: [fungo, muffa],
-oke: [okay],
+oke: [ok],
 alasa: [cacciare, cercare],
 esun: [commercio, vendere],
 jelo: [giallo],

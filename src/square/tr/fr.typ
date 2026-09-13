@@ -17,7 +17,7 @@
   et annoncez-le avant les autres pour gagner la carte. \
   \
   Une liste (et traduction) de tous les symboles du jeu
-  est fournie, triée par élément visuels identifiables.
+  est fournie, triée par éléments visuels identifiables.
   Amusez-vous bien !
 ]
 
@@ -25,9 +25,9 @@
 #let class-intro = [
   Pour vous aider à identifier un symbole,
   cette liste a été organisée selon
-  si les symboles ont des *élément déconnectés*,
+  si les symboles ont des *éléments déconnectés*,
   des *points*, des *zones fermées*, et des *lignes courbes*.
-  Il y en a 133 en tout.
+  Il y a 133 symboles en tout.
 ]
 
 #let plural(n) = if n == 1 { "" } else { "s" }
@@ -42,9 +42,9 @@
 #let copyright = [
   Tous les éléments textuels et graphiques du jeu sont
   disponibles gratuitement sur le dépôt `github:vanille-n/sitelen-tu-sama`,
-  et licensés sous Creative Commons BY-NC-SA. \
+  sous licence Creative Commons BY-NC-SA. \
   Vous êtes libres de les modifier et de les distribuer,
-  à condition de ne pas changer la license, de citer l'auteur
+  à condition de ne pas changer la licence, de citer l'auteur
   d'origine ("jan Newen \<jan-Newen#"@"crans.org>"),
   et uniquement à des fins non commerciales.
 ]
